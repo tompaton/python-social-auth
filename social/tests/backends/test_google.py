@@ -275,3 +275,16 @@ class GoogleOpenIdConnectTest(OpenIdConnectTestMixin, GoogleOAuth2Test):
     user_data_url = \
         'https://www.googleapis.com/plus/v1/people/me/openIdConnect'
     issuer = "accounts.google.com"
+
+    def test_invalid_secret(self):
+        # Skip the verification, not mandatory
+        # https://developers.google.com/accounts/docs/OpenIDConnect#obtainuserinfo
+        pass
+
+    def test_invalid_nonce(self):
+        # nonce not used
+        pass
+
+    def test_expired_signature(self):
+        # expiry not checked
+        pass

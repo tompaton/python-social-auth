@@ -240,6 +240,8 @@ class GoogleOpenIdConnect(GoogleOAuth2, BaseOpenIdConnectAuth):
         if aud != client_id:
             raise AuthTokenError(self, 'Incorrect id_token: aud')
 
+        return id_token
+
     def user_data(self, access_token, *args, **kwargs):
         """Return user data from Google API"""
         return self.get_json(

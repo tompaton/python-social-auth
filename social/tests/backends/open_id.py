@@ -216,11 +216,11 @@ class OpenIdConnectTestMixin(object):
                               expiration_datetime=expiration_datetime)
 
     def test_invalid_issuer(self):
-        self.authtoken_raised('Token error: Invalid issuer',
+        self.authtoken_raised('Token error: Incorrect id_token: iss',
                               issuer='someone-else')
 
     def test_invalid_audience(self):
-        self.authtoken_raised('Token error: Invalid audience',
+        self.authtoken_raised('Token error: Incorrect id_token: aud',
                               client_key='someone-else')
 
     def test_invalid_issue_time(self):
